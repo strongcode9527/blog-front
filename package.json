@@ -1,0 +1,35 @@
+{
+  "name": "blog-front",
+  "version": "1.0.0",
+  "description": "博客前端代码",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./scripts/dev.js --trace-depracation"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongcode9527/blog-front.git"
+  },
+  "author": "storng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strongcode9527/blog-front/issues"
+  },
+  "homepage": "https://github.com/strongcode9527/blog-front#readme",
+  "dependencies": {
+    "strong-speed": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-transform-react-jsx": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "react-dev-utils": "^9.1.0",
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
