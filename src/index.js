@@ -1,21 +1,28 @@
 import Speed, {Component, render} from 'strong-speed'
-
-
+import axios from 'axios';
+import showdown from 'showdown';
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      num: 0,
-      show: true
+      body: '',
+      title: ''
     }
-
+    this.coverter = new showdown.Converter();
   }
 
   componentDidMount() {
-    // this.id = setInterval(() => {
-    //   this.setState({num: this.state.num + 1, show: !this.state.show})
-    // }, 1)
+    axios({
+      method: 'GET',
+      url: '/api/blog/1'
+    }).then((data) => {
+        this.setState({
+          title: data.title,
+          body: this.coverter.makeHtml(data.data.body)
+        })
+        const container = document.getElementById('container').innerHTML = this.coverter.makeHtml(data.data.body)
+    })
   }
 
   componentDidUpdate() {
@@ -27,15 +34,11 @@ class App extends Component {
   }
 
   render() {
-    const {num} = this.state
+    console.log(this.state)
 
     return (
-      <div onClick={() => {console.log('in')}} style={{background: 'red'}} className="container">
-        <span>{num}</span> 
+      <div onClick={() => {console.log('in')}} style={{background: 'red'}} className="container" id="container">
         <span data-index={this.state.num}>strong2</span>
-        {
-          this.state.show && <div>show</div>
-        }  
       </div>
     )
   }

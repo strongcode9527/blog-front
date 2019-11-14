@@ -19,7 +19,10 @@ choosePort('localhost', 9527)
   const server = new devServer(compiler, {
     contentBase: './dist',
     hot: true,
-    host: 'localhost'
+    host: 'localhost',
+    proxy: {
+      '/api': 'http://www.strongcode.top'
+    }
   })
 
   server.listen(port, 'localhost', () => {

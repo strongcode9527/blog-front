@@ -14,5 +14,10 @@ module.exports =  merge(common, {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({template: './index.html'}) 
-  ]
+  ],
+  devServer: {
+    proxy: {
+        '/api': 'https://www.strongcode.top'
+    }
+}
 });
