@@ -1,17 +1,13 @@
 import Speed, {Component, render} from 'strong-speed'
 import axios from 'axios';
 import showdown from 'showdown';
-import Detail from './page/details';
-import List from './page/list';
-
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       body: '',
-      title: '',
-      showList: false
+      title: ''
     }
     this.coverter = new showdown.Converter();
   }
@@ -37,18 +33,12 @@ class App extends Component {
   }
 
   render() {
-    const { body, title, showList } = this.state;
-    console.log(this);
+    const {body, title} = this.state;
     return (
       <div className="container" id="container">
-        {
-          this.state.showList && <List />
-        }
-      
-        <Detail />
+        <div>{title}</div>
+        <div dangersInnerHTML={body}></div>
       </div>
     )
   }
 }
-
-render(<App aa="aaa"></App>, document.getElementById('root'))

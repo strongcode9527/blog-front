@@ -5007,10 +5007,10 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-strong-speed@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/strong-speed/-/strong-speed-1.0.1.tgz#fcc3cdac3a87e3664ca77728d3f7a9de2c0d6644"
-  integrity sha512-RR4lsVviDi6em6NQJ6bA6VWHwhbTAthfAWU8jVuMCSp8NSRKEJFf3cMSS1R2ExIiZhK7vGHQ3sPrpemfiQF0Ug==
+strong-speed@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/strong-speed/-/strong-speed-1.0.2.tgz#a4a38b4bc744ed0c7d08721a527e06d08b32e374"
+  integrity sha512-yF4kSLt6J2EMLk1tVmSHVeXUUKN6wbboCivl55kcDPVEyve0jb9WBlKRgzlms9c7M4AsVxie6r0xrardNx52vg==
   dependencies:
     ramda "^0.25.0"
 
