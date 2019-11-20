@@ -1,13 +1,15 @@
 import Speed, {Component, render} from 'strong-speed'
 import axios from 'axios';
 import showdown from 'showdown';
+import safeGetValue from '../../utils/safeGetValue';
 export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      body: '',
-      title: ''
+      data: [{
+        title: '000'
+      }]
     }
     this.coverter = new showdown.Converter();
   }
@@ -15,28 +17,26 @@ export default class App extends Component {
   componentDidMount() {
     axios({
       method: 'GET',
-      url: '/api/blog/1'
+      url: '/api/list'
     }).then((data) => {
         this.setState({
-          title: data.data.title,
-          body: this.coverter.makeHtml(data.data.body)
-        });
+          data: safeGetValue([], ['data'], data)
+        })
     })
   }
 
-  componentDidUpdate() {
-    console.log('in update')
-  }
-
-  handleClick = () => {
-    console.log('insssss');
-  }
-
   render() {
-    const {body, title} = this.state;
+    const {data} = this.state;
+    console.log(this.state.data)
     return (
       <div className="container" id="container">
-        list
+        {
+          data.map((item => (
+            <div>
+              {item.title}
+            </div>
+          )))
+        }
       </div>
     )
   }

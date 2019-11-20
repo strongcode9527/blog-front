@@ -26,6 +26,11 @@ class App extends Component {
           body: this.coverter.makeHtml(data.data.body)
         });
     })
+    setTimeout(() => {
+      this.setState({
+        showList: true
+      })
+    }, 1000) 
   }
 
   componentDidUpdate() {
@@ -41,11 +46,8 @@ class App extends Component {
     console.log(this);
     return (
       <div className="container" id="container">
-        {
-          this.state.showList && <List />
-        }
-      
-        <Detail />
+        {this.state.showList && <List /> }
+        {false && <Detail />}
       </div>
     )
   }

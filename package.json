@@ -19,7 +19,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "showdown": "^1.9.1",
-    "strong-speed": "^1.0.2"
+    "strong-speed": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
