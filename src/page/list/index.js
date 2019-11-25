@@ -2,14 +2,15 @@ import Speed, {Component, render} from 'strong-speed'
 import axios from 'axios';
 import showdown from 'showdown';
 import safeGetValue from '../../utils/safeGetValue';
+import formatTime from '../../utils/formatTime';
+import './index.less';
+
 export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      data: [{
-        title: '000'
-      }]
+      data: []
     }
     this.coverter = new showdown.Converter();
   }
@@ -26,16 +27,17 @@ export default class App extends Component {
   }
 
   render() {
-    const {data} = this.state;
-    console.log(this.state.data)
+    const { data } = this.state;
+    console.log(Array.isArray(data), data)
     return (
       <div className="container" id="container">
         {
-          data.map((item => (
+          data.map((item) => (
             <div>
-              {item.title}
+              <div>{item.title}</div>
+              <div>{formatTime(item.updated_at)}</div>
             </div>
-          )))
+          ))
         }
       </div>
     )
