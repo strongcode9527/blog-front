@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       body: '',
       title: '',
-      showList: false
+      showState: 1
     }
     this.coverter = new showdown.Converter();
   }
@@ -42,12 +42,11 @@ class App extends Component {
   }
 
   render() {
-    const { body, title, showList } = this.state;
-    console.log(this);
+    const { body, title, showList, showState } = this.state;
     return (
       <div className="container" id="container">
-        {this.state.showList && <List /> }
-        {false && <Detail />}
+        { showState === 0 && <List /> }
+        { showState === 1 && <Detail id={1} />}
       </div>
     )
   }

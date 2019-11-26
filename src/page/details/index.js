@@ -34,6 +34,7 @@ export default class App extends Component {
 
   render() {
     const {body, title} = this.state;
+    console.log('props', this)
     return (
       <div className="container" id="container">
         <div>{title}</div>
